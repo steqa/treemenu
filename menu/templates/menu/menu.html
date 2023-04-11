@@ -1,0 +1,9 @@
+{% extends 'menu/base.html' %}
+{% load menu %}
+
+{% block title %}Menu{% endblock %}
+
+{% block content %}
+    {% get_menu as menu_items %}
+    {% include 'menu/menu_list.html' with menu_items=menu_items depth=0 %}
+{% endblock %}
