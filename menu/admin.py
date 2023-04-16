@@ -12,6 +12,6 @@ class MenuAdmin(admin.ModelAdmin):
 
 @admin.register(MenuItem)
 class MenuItemAdmin(admin.ModelAdmin):
-    list_display = ('menu', 'name', 'url', 'parent')
-    list_filter = ('menu', 'name', 'url', 'parent')
-    search_fields = ('menu', 'name', 'url', 'parent')
+    list_display = ('menu', 'name', 'slug', 'parent')
+    list_filter = ('menu', 'name', 'slug', 'parent')
+    search_fields = ('menu', 'name', 'slug', 'parent')
