@@ -7,6 +7,28 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
+    <style>
+        li {
+            list-style-type: disc;
+        }
+        .menu-item {
+            font-size: 1rem;
+            font-family: JetBrains Mono;
+            text-decoration: none;
+            transition: opacity 0.5s;
+        }
+        .menu-item-active {
+            font-weight: bold;
+            color: rgba(0, 0, 0, 1);
+        }
+        .menu-item-inactive {
+            color: rgba(0, 0, 0, 0.5);
+            transition: color 0.5s;
+        }
+        .menu-item-inactive:hover {
+            color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
     {% block content %}{% endblock %}
 </body>
 </html>

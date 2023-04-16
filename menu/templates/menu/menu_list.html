@@ -1,9 +1,16 @@
-{% load custom_filters %}
-
-{% for menu_item in menu_items %}
-    {{ '-'|repeat:depth }}
-    <a href="{{ menu_item.url }}">{{ menu_item.name }}</a> <br>
-    {% if menu_item.children.all %}
-        {% include 'menu/menu_list.html' with menu_items=menu_item.children.all depth=depth|add:1 %}
-    {% endif %}
-{% endfor %}
+<ul>
+    {% for item in items %}
+        <li>
+            <a href="?{{ menu }}={{ item.slug }}" class="menu-item">
+                {% if selected_item and item.id == selected_item.id %}
+                <span class="menu-item-active">{{ item.name }}</span>
+                {% else %}
+                <span class="menu-item-inactive">{{ item.name }}</span>
+                {% endif %}
+            </a>
+        </li>
+        {% if item.child_items %}
+            {% include 'menu/menu_list.html' with items=item.child_items %}
+        {% endif %}
+    {% endfor %}
+</ul>

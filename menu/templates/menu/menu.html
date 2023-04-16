@@ -1,9 +1,8 @@
 {% extends 'menu/base.html' %}
-{% load menu %}
+{% load draw_menu %}
 
 {% block title %}Menu{% endblock %}
 
 {% block content %}
-    {% get_menu as menu_items %}
-    {% include 'menu/menu_list.html' with menu_items=menu_items depth=0 %}
+    {% draw_menu 'menu1' %}
 {% endblock %}
